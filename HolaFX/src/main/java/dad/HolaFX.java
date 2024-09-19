@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
@@ -21,13 +22,12 @@ public class HolaFX extends Application {
         saludoLabel.setLayoutY(20); // coordenada y de la etiqieta
 
         Button button = new Button("No me toques");
+        button.setTooltip(new Tooltip("mamahuevo"));
         button.setLayoutX(40);
         button.setLayoutY(40);
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                System.out.println("me tocaron :( ");
-            }
+        button.setOnAction(actionEvent -> {
+            System.out.println("me tocaron :( ");
+            saludoLabel.setText("hola juan");
         });
 
 
